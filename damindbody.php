@@ -2,8 +2,8 @@
 	/*
 	* Plugin Name: DefineAwesome MindBody
 	* Description: The #DefineAwesome MindBody Solution for The Yoga Brief
-	* Version: 1.2
-	* Author: #DEFINE AWESOME;
+	* Version: 1.2.2
+	* Author: #DefineAwesome;
 	* Author URI: none
 	*/
 
@@ -22,10 +22,6 @@
 	}
 	
 	// At this point, we will load our included files
-	// TODO put this into it's own 'settings' file
-	require_once DAMB_PLUGIN_DIR . '/includes/admin/damindbody-menu.php';
-	require_once DAMB_PLUGIN_DIR . '/includes/admin/class-damindbody-settings.php';
-	require_once DAMB_PLUGIN_DIR . '/includes/damindbody-table.php';
-	require_once DAMB_PLUGIN_DIR . '/includes/damindbody-styles.php';
+	require_once DAMB_PLUGIN_DIR . '/damindbody-settings.php';
 ?>
 	

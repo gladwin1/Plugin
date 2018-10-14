@@ -6,9 +6,6 @@
 	*/
 	defined( 'ABSPATH' ) || exit; // Prevent Direct Access
 
-	// This hook will create our admin menu in the side-panel
-	add_action('admin_menu', 'damb_add_pages');
-
    /**
 	* Action function for the admin menu hook
 	*
@@ -30,4 +27,7 @@
 			echo "<h2>" . __( 'You must be an Admin to make changes to this page', 'menu-test' ) . "</h2>";
 		}
 	}
+	
+	// This hook will create our admin menu in the side-panel
+	add_action('admin_menu', 'damb_add_pages');
 ?>
