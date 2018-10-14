@@ -28,7 +28,7 @@ Setting File:	'da-mindbody-settings.php'
 			sub-folders:
 	- 'admin'	Used to house any admin specific functionality!
 	- 'module'	Used for the table display module, data processing should occur in a
-			seperate folder. TODO: DEFINE FOLDER
+			the 'data' folder. 
 	- 'data'	Used to handle incoming/outgoing data between this plugin and the 
 			Microservice.
 			
