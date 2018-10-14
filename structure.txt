@@ -1,0 +1,33 @@
+* Plugin Name: DefineAwesome MindBody
+* Description: The #DefineAwesome MindBody Solution for The Yoga Brief
+* Version: 1.2.2
+* Author: #DefineAwesome;
+* Author URI: none
+
+/-----------------------------------------------------------------------/
+
+This document outlines the file structure of this plugin
+'Main' file: 	'da-mindbody.php'
+	Purpose:	This file establishes constants and calls follow on files 
+			to load the plugin's settings.
+			This file acts the same as a 'main' class would in a regular
+			program, thus it should only be used to call follow on tasks.
+
+Setting File:	'da-mindbody-settings.php'
+	Purpose:	This file loads all relevant files, which are required for regular 
+			plugin functionality.
+			Any admin specific content should be placed in the 'if (is_admin()' 
+			clause. 
+
+** FOLDERS **
+'assets'		Used to store images, javascript files, css files, etc. Note that 
+			files within 'assets' should generaly be loaded from functions in 
+			the 'includes' folder.
+
+'includes'		This folder houses ALL of the plugins functionality. It has several 
+			sub-folders:
+	- 'admin'	Used to house any admin specific functionality!
+	- 'module'	Used for the table display module, data processing should occur in a
+			seperate folder. TODO: DEFINE FOLDER
+	- 'data'	Used to handle incoming/outgoing data between this plugin and the 
+			Microservice.
