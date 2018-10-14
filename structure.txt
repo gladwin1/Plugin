@@ -31,3 +31,6 @@ Setting File:	'da-mindbody-settings.php'
 			seperate folder. TODO: DEFINE FOLDER
 	- 'data'	Used to handle incoming/outgoing data between this plugin and the 
 			Microservice.
+			
+			NOTE: 	Table display and data processing are handled first by 
+				'damindbody-table-control.php'

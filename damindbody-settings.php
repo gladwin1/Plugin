@@ -12,7 +12,7 @@
 		require_once DAMB_PLUGIN_DIR . '/includes/admin/class-damindbody-settings.php';
 	}
 
-	require_once DAMB_PLUGIN_DIR . '/includes/damindbody-table.php';
+	require_once DAMB_PLUGIN_DIR . '/includes/damindbody-table-control.php';
 	require_once DAMB_PLUGIN_DIR . '/includes/damindbody-styles.php'; 
 ?>
 	
