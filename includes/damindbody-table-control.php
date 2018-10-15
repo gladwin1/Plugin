@@ -11,6 +11,7 @@
 
    /**
 	* This function outputs the MindBody table via a shortcode
+	* We will co-ordinate all I/O and data processing here
 	*
 	* @since 1.2.0
 	*/
