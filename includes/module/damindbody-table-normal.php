@@ -1,6 +1,6 @@
 <?php
 	/**
-	 * Plugin Name: DefineAwesome MindBody
+	 * @package: DefineAwesome MindBody
 	 *
 	 * @since 1.2.0
 	 */

@@ -110,7 +110,15 @@
 				array( $this, 'onoff_toggle_callback' ),// Callback
 				'damb_main_settings', 					// Page
 				'damb_check_section' 					// Section           
-			);           
+			);       
+
+			add_settings_field(
+				'damb_microservice_url', 				// ID
+				'Microservice URL:', 					// Title 
+				array( $this, 'microservice_callback'), // Callback
+				'damb_main_settings', 					// Page
+				'damb_check_section' 					// Section           
+			);   			
 		}
 
 		/**
@@ -125,7 +133,7 @@
 			$new_input = array();
 
 			//returns true if checkbox is checked
-            if ( isset( $input ))
+            if ( isset( $input['damb_disable_button'] ))
 			{
 				$new_input['damb_disable_button'] = 1; 
 			}
@@ -133,6 +141,8 @@
 			{
 				$new_input['damb_disable_button'] = 0; 
 			}
+			
+			$new_input['damb_microservice_url'] = $input['damb_microservice_url'];
 			
 			return $new_input;
 		}
@@ -150,6 +160,20 @@
 				'<input type="checkbox" id="damb_disable_button" name="damb_settings[damb_disable_button]" value="1"' . 
 					checked( 1, $this->options['damb_disable_button'], false) . 
 				'/>'
+			);
+		}
+		
+		/** 
+		 * Here we will 'print' a setting option (a text field)
+		 * The result will hold our microservice URL
+		 *
+		 * @since 1.2.3
+		 */
+		public function microservice_callback()
+		{
+	        printf(
+				'<input type="text" id="damb_microservice_url" name="damb_settings[damb_microservice_url]" value="%s" />',
+				isset( $this->options['damb_microservice_url'] ) ? esc_attr( $this->options['damb_microservice_url']) : ''
 			);
 		}
 	}

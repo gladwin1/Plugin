@@ -1,10 +1,10 @@
 <?php
-/**
- * Plugin Name: DefineAwesome MindBody
- *
- * @since 1.2.0
- */
-defined( 'ABSPATH' ) || exit; // Prevent Direct Access
+	/**
+	 * @package: DefineAwesome MindBody
+	 *
+	 * @since 1.2.0
+	 */
+	defined( 'ABSPATH' ) || exit; // Prevent Direct Access
 
 	// Hook for adding the 'controlMBTable' shortcode
 	add_shortcode( 'awe1', 'controlMBTable' );
@@ -34,16 +34,33 @@ defined( 'ABSPATH' ) || exit; // Prevent Direct Access
 			include_once DAMB_PLUGIN_DIR . '/includes/data/damindbody-data-main.php';
 			include_once DAMB_PLUGIN_DIR . '/includes/module/damindbody-table-normal.php';
 			
-			$table .= '<h1>Table</h1>';
-			$url   = "https://mb-mock-1.herokuapp.com/class";
-			$data  = getMockData( $url );
-			$table = displayMBTable( $table, $data );
+			// First, we will grab our base URL (from the plugin settings)
+			$base_url = $options['damb_microservice_url'];
+			
+			// TODO get the ID associated with this page and append it to the url
+			$this_studio_id = "99";
+			$full_url   	= $base_url."class?id=-".$this_studio_id;
+			
+			try
+			{
+				$data  = getJSONData( $full_url );
+				
+				$table .= '<h1>Table</h1>';
+				$table = displayMBTable( $table, $data );
+			}
+			catch (MBTableException $e)
+			{
+				// IF we catch this error, then our data was INVALID
+				// We will not display a table here!
+				include_once DAMB_PLUGIN_DIR . '/includes/module/damindbody-table-off.php';
+				$table .= displayNoTable($e->getUserMessage());
+			}
 		}
 		else
 		{
 			// Load the DISABLED table display
 			include_once DAMB_PLUGIN_DIR . '/includes/module/damindbody-table-off.php';
-			$table .= displayNoTable();
+			$table .= displayNoTable("Sorry, ths service has been temporarily disabled.");
 		}
 		
 		return ($table ."</div>");

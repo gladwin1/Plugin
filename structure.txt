@@ -23,14 +23,19 @@ Setting File:	'da-mindbody-settings.php'
 'assets'		Used to store images, javascript files, css files, etc. Note that 
 			files within 'assets' should generaly be loaded from functions in 
 			the 'includes' folder.
+	- 'custom'	Custom classes, functions and datasets. Used for things like exception
+			classes.
 
 'includes'		This folder houses ALL of the plugins functionality. It has several 
 			sub-folders:
 	- 'admin'	Used to house any admin specific functionality!
-	- 'module'	Used for the table display module, data processing should occur in a
-			the 'data' folder. 
+	- 'api'		Used to house any functions or classes that rely on the api or contain
+			api-specific data. I.E data that could be corrupted if there was a change
+			in the MindBody API.
 	- 'data'	Used to handle incoming/outgoing data between this plugin and the 
 			Microservice.
+	- 'module'	Used for the table display module, data processing should occur in a
+			the 'data' folder. 
 			
 			NOTE: 	Table display and data processing are handled first by 
 				'damindbody-table-control.php'
