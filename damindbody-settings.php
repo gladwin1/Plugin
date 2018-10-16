@@ -14,10 +14,10 @@
 	}
 
 	// Our standard files
-	require_once DAMB_PLUGIN_DIR . '/includes/damindbody-add-remove.php';
 	require_once DAMB_PLUGIN_DIR . '/includes/damindbody-table-control.php';
+	require_once DAMB_PLUGIN_DIR . '/includes/plugin/damindbody-add-remove.php';
+	require_once DAMB_PLUGIN_DIR . '/includes/plugin/damindbody-styles.php';
 	require_once DAMB_PLUGIN_DIR . '/includes/api/damindbody-api-statuscodes.php';
-	require_once DAMB_PLUGIN_DIR . '/includes/damindbody-styles.php'; 
 	
 	require_once DAMB_PLUGIN_DIR . '/assets/custom/damindbody-exceptions.php';
 	

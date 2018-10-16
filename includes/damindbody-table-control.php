@@ -51,10 +51,16 @@
 			}
 			catch (MBTableException $e)
 			{
-				// IF we catch this error, then our data was INVALID
+				// IF we catch this exception, then our data call was INVALID (for some reason)
 				// We will not display a table here!
 				include_once DAMB_PLUGIN_DIR . '/includes/module/damindbody-table-off.php';
 				$table .= displayNoTable($e->getUserMessage());
+			}
+			catch (Exception $a)
+			{
+				// IF we catch any other
+				include_once DAMB_PLUGIN_DIR . '/includes/module/damindbody-table-off.php';
+				$table .= displayNoTable("Whoops, we're not sure what happened here.");
 			}
 		}
 		else
