@@ -31,7 +31,7 @@
 		if (checkMBStatusCode($result['GetClassSchedulesResult']['ErrorCode']))
 		{
 			//TODO Breakdown the dataset here
-			
+			$class_schedule_array = $result['GetClassSchedulesResult']['ClassSchedules']['ClassSchedule'];
 		}
 
 		return $result['GetClassSchedulesResult'];
