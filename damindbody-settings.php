@@ -6,12 +6,14 @@
 	 */
 	defined( 'ABSPATH' ) || exit; // Prevent Direct Access
 	
-	// At this point, we will load our included files, starting with the admin file 
+	// This will load our follow on files and set up any hooks
+	// First we will load our admin files, if the user is an admin!
 	if ( is_admin() ) {
 		require_once DAMB_PLUGIN_DIR . '/includes/admin/damindbody-menu.php';
 		require_once DAMB_PLUGIN_DIR . '/includes/admin/class-damindbody-settings.php';
 	}
 
+	// Our standard files
 	require_once DAMB_PLUGIN_DIR . '/includes/damindbody-add-remove.php';
 	require_once DAMB_PLUGIN_DIR . '/includes/damindbody-table-control.php';
 	require_once DAMB_PLUGIN_DIR . '/includes/api/damindbody-api-statuscodes.php';
