@@ -1,6 +1,6 @@
 * Plugin Name: DefineAwesome MindBody
 * Description: The #DefineAwesome MindBody Solution for The Yoga Brief
-* Version: 1.2.2
+* Version: 1.2.3
 * Author: #DefineAwesome;
 * Author URI: none
 
@@ -25,6 +25,7 @@ Setting File:	'da-mindbody-settings.php'
 			the 'includes' folder.
 	- 'custom'	Custom classes, functions and datasets. Used for things like exception
 			classes.
+	- 'scripts'	Used to store custom scripts for the site.
 
 'includes'		This folder houses ALL of the plugins functionality. It has several 
 			sub-folders:
@@ -36,6 +37,8 @@ Setting File:	'da-mindbody-settings.php'
 			Microservice.
 	- 'module'	Used for the table display module, data processing should occur in a
 			the 'data' folder. 
+	- 'plugin'	Houses files that call or enqueue other files or objects for use in this
+			plugin.
 			
 			NOTE: 	Table display and data processing are handled first by 
 				'damindbody-table-control.php'
