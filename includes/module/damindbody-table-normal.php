@@ -12,17 +12,18 @@
 	* @since 1.2.0
 	*/
 	function displayMBTable( $table, $data ) {
-		$table .= "<div id='datatable_container'><h2>Retrieved Data</h2><table>";
-		$table .= "<tr><th>Key</th><th>Value</th></tr>";
-		foreach ( $data as $key => $value ) {
-			$table .= "<tr>";
-			$table .= "<td>" . htmlentities( $key ) . "</td>";
-			if ( is_string( $value ) || is_integer( $value ) || is_float( $value ) ) {
-				$table .= "<td>" . htmlentities( $value ) . "</td>";
-			} else {
-				$table .= "<td>Data (probably an array)</td>";
-			}
-			$table .= "</tr>";
+		
+		// Firstly, we don't want to dsiplay a table if there aren't any upcoming events!
+		if (count($data) == 0)
+			throw new MBTableException('No Results', "There are no upcoming events!");
+		
+		$table .= "<div id='datatable_container'><table class='table'>";
+		
+		// For each ROW in the MBTable...
+		foreach ( $data as $row => $row_data ) {
+			
+
+			$table .= buildMBRow($row_data);
 		}
 		$table .= "</table></div>";
 

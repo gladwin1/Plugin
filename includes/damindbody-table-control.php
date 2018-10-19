@@ -16,11 +16,7 @@
 	* @since 1.2.0
 	*/
 	function controlMBTable() {
-		
-		// TODO: REMOVE this mock page
-		include_once DAMB_PLUGIN_DIR . '/includes/module/damindbody-mock-page.php';
-		page(); // TEMP
-		
+			
 		// We will use this to hold our output response
 		$table = "<div>";
 		
@@ -30,23 +26,26 @@
 		// If the plugin is not disabled, we will display it's data
 		if (! $options['damb_disable_button'])
 		{
-			// These two files will allow us to build our MindBody
-			// table. 
-			include_once DAMB_PLUGIN_DIR . '/includes/data/damindbody-data-main.php';
+			// These files will allow us to build our MindBody table. 
+			include_once DAMB_PLUGIN_DIR . '/includes/data/damindbody-data-general.php';
 			include_once DAMB_PLUGIN_DIR . '/includes/module/damindbody-table-normal.php';
+			include_once DAMB_PLUGIN_DIR . '/includes/module/damindbody-table-tablerow.php';
 			
-			// First, we will grab our base URL (from the plugin settings)
+			// First, we will grab our base URL (from the plugin settings) and
+			// initiate our contants class
 			$base_url = $options['damb_microservice_url'];
+			$_const = new DAMBConstants();
 			
 			// TODO get the ID associated with this page and append it to the url
 			$this_studio_id = "99";
-			$full_url   	= $base_url."class?id=-".$this_studio_id;
+			$full_url   	= $base_url.$_const::TABLE_DATA.$this_studio_id.$_const::TABLE_SIMPLIFIED;
 			
 			try
 			{
+				// GET our event list from the HEROKU DYNO here
 				$data  = getJSONData( $full_url );
-				
-				$table .= '<h1>Table</h1>';
+
+				// Display our table data here			
 				$table = displayMBTable( $table, $data );
 			}
 			catch (MBTableException $e)
