@@ -2,7 +2,7 @@
 	/*
 	* Plugin Name: DefineAwesome MindBody
 	* Description: The #DefineAwesome MindBody Solution for The Yoga Brief
-	* Version: 1.2.4
+	* Version: 1.2.5
 	* Author: #DefineAwesome;
 	* Author URI: none
 	*/

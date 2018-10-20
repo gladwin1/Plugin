@@ -13,7 +13,7 @@
 	*
 	* @since 1.2.4
 	*/
-	function buildMBRow( $row ) {
+	function build_MB_row( $row ) {
 		
 		// We don't want to format an empty array!
 		if (count($row) == 0) 

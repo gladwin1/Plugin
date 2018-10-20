@@ -11,8 +11,8 @@
 	*
 	* @since 1.2.0
 	*/
-	function getJSONData( $url ) {
-		
+	function get_JSON_data( $url ) {
+
 		// First, attempt to get the data from the given URL
 		$response = wp_remote_get( $url )['body'];
 
